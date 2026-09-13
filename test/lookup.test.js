@@ -13,7 +13,7 @@ const wordsAround = (input, pos) => {
 
 test("every scale is well-formed", () => {
   for (const [pos, sense, words] of SCALES) {
-    assert.ok(["noun", "verb"].includes(pos), `bad part of speech: ${pos}`);
+    assert.ok(["noun", "verb", "adjective"].includes(pos), `bad part of speech: ${pos}`);
     assert.ok(sense, "missing sense");
     assert.equal(words, words.toLowerCase(), `not lowercase: ${sense}`);
   }
@@ -55,13 +55,14 @@ test("reduces inflected forms to a base form", () => {
     torn: "tear", preferred: "prefer", leapt: "leap", "get-togethers": "get-together",
   };
   for (const [input, base] of Object.entries(cases)) {
-    assert.equal(lookup(input).matches[0]?.base, base, input);
+    assert.ok(lookup(input).matches.some((m) => m.base === base), input);
   }
 });
 
-test("verb inflections only match verb scales", () => {
-  const pos = new Set(lookup("worried").matches.map((m) => m.pos));
-  assert.deepEqual([...pos], ["verb"]);
+test("verb inflections don't match noun scales", () => {
+  const pos = lookup("worried").matches.map((m) => m.pos);
+  assert.ok(pos.includes("verb"));
+  assert.ok(!pos.includes("noun"));
 });
 
 test("shows every word in the typed form", () => {
@@ -74,6 +75,16 @@ test("shows every word in the typed form", () => {
 
   const problems = lookup("problems").matches[0];
   assert.deepEqual(problems.forms, ["hiccups", "snags", "issues", "problems", "crises"]);
+});
+
+test("shows comparatives and superlatives in the same form", () => {
+  const bigger = lookup("bigger").matches.find((m) => m.sense === "big");
+  assert.equal(bigger.form, "er");
+  assert.deepEqual(bigger.forms.slice(2, 5), ["bigger", "huger", "more enormous"]);
+
+  assert.equal(lookup("best").matches[0].base, "good");
+  assert.equal(lookup("most beautiful").matches[0].base, "beautiful");
+  assert.equal(lookup("happiest").matches[0].forms.at(-1), "most ecstatic");
 });
 
 test("finds both a noun and the verb it comes from", () => {
