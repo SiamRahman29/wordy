@@ -1,0 +1,315 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --ink: #1d1b18;
+  --muted: #6f6a62;
+  --line: #e4e0d8;
+  --chip: #f1eee8;
+  --chip-hover: #e7e2d9;
+  --weak: #5b8fd0;
+  --neutral: #d6d1c7;
+  --strong: #e0603c;
+  --focus: #5b8fd0;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1a18;
+    --surface: #242320;
+    --ink: #f1eee8;
+    --muted: #a39d93;
+    --line: #3a3833;
+    --chip: #2f2d29;
+    --chip-hover: #3a3833;
+    --weak: #79a8e3;
+    --neutral: #57534c;
+    --strong: #f07a55;
+    --focus: #79a8e3;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 360px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.4 var(--sans);
+}
+
+button { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+[hidden] { display: none !important; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+}
+
+/* ── Header & search ───────────────────────────────────────────────────── */
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.logo {
+  font: 600 20px/1 var(--serif);
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.query {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 16px var(--sans);
+}
+
+.query:focus {
+  outline: none;
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 25%, transparent);
+}
+
+/* ── Chips ─────────────────────────────────────────────────────────────── */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--chip);
+  cursor: pointer;
+}
+
+.chip:hover { background: var(--chip-hover); }
+
+.chip.origin {
+  border-color: var(--muted);
+  font-weight: 600;
+}
+
+.chip.selected {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.chip.has-scale::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 6px 1px 0;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--weak), var(--strong));
+}
+
+/* ── Empty & fallback states ───────────────────────────────────────────── */
+
+.empty p,
+.fallback p { margin: 0 0 8px; }
+
+.empty p,
+.note { color: var(--muted); font-size: 12px; }
+
+.fallback-title { font-weight: 600; }
+
+.note { margin: 0; }
+
+/* ── Result ────────────────────────────────────────────────────────────── */
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.senses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.sense {
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sense b {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 10px;
+}
+
+.sense[aria-selected="true"] {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.senses.single .sense {
+  border-color: transparent;
+  padding-left: 0;
+  cursor: default;
+}
+
+.pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 14px 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  cursor: copy;
+  transition: border-color 120ms;
+}
+
+.pick:hover { border-color: var(--muted); }
+
+.pick-word {
+  font: 500 30px/1.15 var(--serif);
+  letter-spacing: -0.01em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.pick-meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.pick[data-side="weaker"] .pick-meta { color: var(--weak); }
+.pick[data-side="stronger"] .pick-meta { color: var(--strong); }
+.pick.copied .pick-meta { color: var(--ink); font-weight: 600; }
+
+/* ── Slider ────────────────────────────────────────────────────────────── */
+
+.slider {
+  position: relative;
+  height: 28px;
+  margin: 0 4px;
+  cursor: pointer;
+  touch-action: none;
+  border-radius: 14px;
+}
+
+.track {
+  position: absolute;
+  inset: 11px 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--weak), var(--neutral) 50%, var(--strong));
+}
+
+.slider.no-weaker .track {
+  background: linear-gradient(90deg, var(--line) 50%, var(--neutral) 50%, var(--strong));
+}
+
+.slider.no-stronger .track {
+  background: linear-gradient(90deg, var(--weak), var(--neutral) 50%, var(--line) 50%);
+}
+
+.slider.no-weaker.no-stronger .track { background: var(--line); }
+
+.stop,
+.thumb {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stop {
+  width: 8px;
+  height: 8px;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  opacity: 0.55;
+}
+
+.stop.origin {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
+
+.thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--surface);
+  border: 3px solid var(--ink);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+  transition: left 140ms ease;
+  pointer-events: none;
+}
+
+.slider.dragging .thumb { transition: none; }
+.thumb[data-side="weaker"] { border-color: var(--weak); }
+.thumb[data-side="stronger"] { border-color: var(--strong); }
+
+.ends {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -8px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Footer ────────────────────────────────────────────────────────────── */
+
+.hint {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 18px;
+  margin-right: 2px;
+  padding: 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  font: 11px/16px var(--sans);
+  text-align: center;
+}
