@@ -51,11 +51,15 @@ Nouns that sound wrong in the plural (like *unease*) go in `UNCOUNTABLE`.
 
 ## Roadmap
 
-- **AI-ranked scales for words that aren't in the list.** Right now unknown words fall back
-  to unranked Datamuse synonyms. The plan is to ask an LLM for an ordered weakest→strongest
-  scale instead and display it on the same slider. Still to decide: whether users bring their
-  own API key or go through a small proxy, caching results so each word costs one call, and
-  how to show that an AI scale is less reliable than a curated one.
+- **Grow the curated scales as far as they'll go.** Most nouns and verbs that
+  have a strength scale should get a hand-ranked one. Curated scales work offline,
+  cost nothing and can be reviewed. Any word that falls through to the Datamuse fallback
+  is a candidate for a new scale.
+- **AI-ranked scales, only for what's left.** Once the curated list stops growing, unknown
+  words could get an LLM-ordered weakest→strongest scale on the same slider instead of
+  unranked synonyms. Still to decide: whether users bring their own API key or go through a
+  small proxy, caching results so each word costs one call, and how to show that an AI
+  scale is less reliable than a curated one.
 
 ## Development
 
