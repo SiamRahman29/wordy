@@ -43,7 +43,7 @@ test("is case- and whitespace-insensitive", () => {
 
 test("returns every sense of a word", () => {
   const pos = lookup("worry").matches.map((m) => m.pos).sort();
-  assert.deepEqual(pos, ["noun", "verb", "verb"]);
+  assert.deepEqual(pos, ["noun", "verb", "verb", "verb"]);
 });
 
 test("reduces inflected forms to a base form", () => {
@@ -51,7 +51,8 @@ test("reduces inflected forms to a base form", () => {
     hated: "hate", hates: "hate", hating: "hate", running: "run", ran: "run",
     worried: "worry", worries: "worry", pushed: "push", grabbing: "grab",
     crises: "crisis", problems: "problem", lying: "lie", shouted: "shout",
-    stared: "stare", "poring over": "pore over",
+    stared: "stare", "poring over": "pore over", fled: "flee", hidden: "hide",
+    torn: "tear", preferred: "prefer", leapt: "leap", "get-togethers": "get-together",
   };
   for (const [input, base] of Object.entries(cases)) {
     assert.equal(lookup(input).matches[0]?.base, base, input);
