@@ -1,6 +1,7 @@
 # wordy
 
-A browser extension for finding **weaker and stronger** versions of nouns and verbs.
+A browser extension for finding **weaker and stronger** versions of nouns, verbs and
+adjectives.
 
 Select a word on the page (or type one) and open the popup: the word sits in the middle of a slider. Weaker
 words (*mind*, *dislike*) are on the left and stronger ones (*despise*, *detest*, *loathe*,
@@ -11,8 +12,9 @@ the word or press <kbd>Enter</kbd> to copy it.
 - Opens with the word you've selected on the page, including selections inside text
   fields and embedded frames.
 - Keeps the form you used: *hated* gives *detested*, *broken* gives *shattered*,
-  *problems* gives *crises*, and *Hated* gives *Detested*.
-- Words with several meanings show a tab per meaning (e.g. *fear* as a verb and as a noun).
+  *problems* gives *crises*, *happier* gives *more thrilled*, and *Hated* gives *Detested*.
+- Words with several meanings show a tab per meaning (e.g. *fear* as a verb and as a noun,
+  or *scared* as an adjective and as the past tense of *scare*).
 - For words that aren't in any scale, it shows similar words from the free
   [Datamuse API](https://www.datamuse.com/api/). These are not ranked by strength. The ones
   marked with a dot have their own scale.
@@ -36,10 +38,12 @@ extension-shortcuts page) to open the popup.
 
 ## Adding words
 
-Each entry in `src/scales.js` is `[partOfSpeech, sense, "weakest, …, strongest"]`:
+Each entry in `src/scales.js` is `[partOfSpeech, sense, "weakest, …, strongest"]`, where the
+part of speech is `noun`, `verb` or `adjective`:
 
 ```js
 ["verb", "feel aversion", "mind, dislike, hate, despise, detest, loathe, abhor"],
+["adjective", "big", "sizable, large, big, huge, enormous, gigantic, colossal"],
 ```
 
 Keep a scale to one meaning. A word can appear in several scales if it has several senses.
@@ -47,12 +51,14 @@ Run `npm test` afterwards. It checks that every scale is well formed, and that e
 can be inflected and then recognized again.
 
 New irregular verbs (like *swim → swam, swum*) go in `IRREGULAR_VERBS` in `src/forms.js`.
-Nouns that sound wrong in the plural (like *unease*) go in `UNCOUNTABLE`.
+Nouns that sound wrong in the plural (like *unease*) go in `UNCOUNTABLE`. Adjectives
+with irregular comparatives (like *bad → worse, worst*) go in `IRREGULAR_ADJECTIVES`, and
+short ones that only take *more*/*most* (like *wrong*) go in `ONLY_MORE`.
 
 ## Roadmap
 
-- **Grow the curated scales as far as they'll go.** Most nouns and verbs that
-  have a strength scale should get a hand-ranked one. Curated scales work offline,
+- **Grow the curated scales as far as they'll go.** Most nouns, verbs and adjectives
+  that have a strength scale should get a hand-ranked one. Curated scales work offline,
   cost nothing and can be reviewed. Any word that falls through to the Datamuse fallback
   is a candidate for a new scale.
 - **AI-ranked scales, only for what's left.** Once the curated list stops growing, unknown
