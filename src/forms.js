@@ -6,47 +6,70 @@
 
 // Irregular verbs that appear in the scales: base -> [past, past participle].
 const IRREGULAR_VERBS = {
-  beat: ["beat", "beaten"], break: ["broke", "broken"], cut: ["cut", "cut"],
-  drink: ["drank", "drunk"], eat: ["ate", "eaten"], fall: ["fell", "fallen"],
-  fight: ["fought", "fought"], fling: ["flung", "flung"],
-  forbid: ["forbade", "forbidden"], grow: ["grew", "grown"], hit: ["hit", "hit"],
-  hold: ["held", "held"], hurt: ["hurt", "hurt"], know: ["knew", "known"],
-  mislead: ["misled", "misled"], read: ["read", "read"], rise: ["rose", "risen"],
+  bear: ["bore", "borne"], beat: ["beat", "beaten"], bite: ["bit", "bitten"],
+  break: ["broke", "broken"], cut: ["cut", "cut"], drink: ["drank", "drunk"],
+  eat: ["ate", "eaten"], fall: ["fell", "fallen"], fight: ["fought", "fought"],
+  flee: ["fled", "fled"], fling: ["flung", "flung"], forbid: ["forbade", "forbidden"],
+  forgive: ["forgave", "forgiven"], freeze: ["froze", "frozen"], grow: ["grew", "grown"],
+  hide: ["hid", "hidden"], hit: ["hit", "hit"], hold: ["held", "held"],
+  hurt: ["hurt", "hurt"], know: ["knew", "known"], leave: ["left", "left"],
+  mislead: ["misled", "misled"], misspend: ["misspent", "misspent"],
+  read: ["read", "read"], rebuild: ["rebuilt", "rebuilt"], rise: ["rose", "risen"],
   run: ["ran", "run"], say: ["said", "said"], shake: ["shook", "shaken"],
-  shine: ["shone", "shone"], sleep: ["slept", "slept"], slay: ["slew", "slain"],
-  steal: ["stole", "stolen"], sting: ["stung", "stung"], stink: ["stank", "stunk"],
-  stride: ["strode", "stridden"], strike: ["struck", "struck"],
-  strive: ["strove", "striven"], swell: ["swelled", "swollen"],
-  take: ["took", "taken"], think: ["thought", "thought"], throw: ["threw", "thrown"],
-  thrust: ["thrust", "thrust"], understand: ["understood", "understood"],
-  upset: ["upset", "upset"], weep: ["wept", "wept"],
+  shine: ["shone", "shone"], show: ["showed", "shown"], shrink: ["shrank", "shrunk"],
+  slay: ["slew", "slain"], sleep: ["slept", "slept"], spend: ["spent", "spent"],
+  spin: ["spun", "spun"], spit: ["spat", "spat"], steal: ["stole", "stolen"],
+  sting: ["stung", "stung"], stink: ["stank", "stunk"], stride: ["strode", "stridden"],
+  strike: ["struck", "struck"], strive: ["strove", "striven"], swear: ["swore", "sworn"],
+  swell: ["swelled", "swollen"], take: ["took", "taken"], tear: ["tore", "torn"],
+  think: ["thought", "thought"], throw: ["threw", "thrown"], thrust: ["thrust", "thrust"],
+  understand: ["understood", "understood"], upset: ["upset", "upset"],
+  weep: ["wept", "wept"], wet: ["wet", "wet"], withdraw: ["withdrew", "withdrawn"],
 };
 
 // Accepted when reading input, but never produced.
 const ALTERNATE_PAST = {
-  burnt: "burn", smelt: "smell", strived: "strive", shined: "shine", slayed: "slay",
+  burnt: "burn", leapt: "leap", smelt: "smell", strived: "strive", shined: "shine",
+  slayed: "slay", wetted: "wet",
 };
 
 // Multi-syllable verbs whose final consonant doubles ("abhorred").
-const DOUBLE_FINAL = new Set(["abhor", "control", "extol", "forbid", "upset", "worship"]);
+const DOUBLE_FINAL = new Set([
+  "abhor", "admit", "control", "excel", "extol", "forbid", "prefer", "regret", "repel",
+  "upset", "worship",
+]);
 
 // Irregular noun plurals.
 const IRREGULAR_PLURALS = { crisis: "crises", nemesis: "nemeses" };
 
 // Nouns that read badly in the plural ("uneases"); they stay singular.
 const UNCOUNTABLE = new Set([
-  "acclaim", "admiration", "adoration", "adulation", "amazement", "anger",
-  "anguish", "arrogance", "astonishment", "awe", "bravery", "brilliance",
-  "burnout", "chaos", "clutter", "competence", "contentment", "courage",
-  "curiosity", "damage", "despair", "destruction", "devastation", "disarray",
-  "disbelief", "disgrace", "disgust", "distaste", "distress", "distrust",
-  "dread", "drizzle", "elation", "euphoria", "excitement", "exhaustion",
-  "exhilaration", "expertise", "fascination", "fatigue", "feedback", "fury",
-  "grief", "growth", "guilt", "hatred", "heroism", "hubris", "hunger",
-  "hysterics", "liking", "loathing", "mastery", "pandemonium", "praise",
-  "pride", "progress", "radiance", "regard", "remorse", "repugnance",
-  "respect", "reverence", "revulsion", "satisfaction", "shame", "skepticism",
-  "starvation", "unease", "valor", "veneration",
+  "abundance", "acclaim", "admiration", "adoration", "adulation", "affluence",
+  "amazement", "anger", "anguish", "arrogance", "astonishment", "attention",
+  "awareness", "awe", "bewilderment", "bliss", "bloodshed", "boredom",
+  "bravery", "brilliance", "brutality", "burnout", "calm", "carnage", "chaos",
+  "clout", "clutter", "cold", "competence", "confusion", "contempt",
+  "contentment", "courage", "cruelty", "curiosity", "damage", "dearth",
+  "dehydration", "desolation", "despair", "destitution", "destruction",
+  "devastation", "devotion", "dirt", "disarray", "disbelief", "disdain",
+  "disgrace", "disgust", "disregard", "distaste", "distress", "distrust",
+  "dominance", "dread", "drizzle", "drudgery", "elation", "enjoyment",
+  "euphoria", "evidence", "exasperation", "excitement", "exhaustion",
+  "exhilaration", "expertise", "faith", "fame", "familiarity", "fascination",
+  "fatigue", "feedback", "filth", "fury", "grief", "grime", "growth", "guilt",
+  "hatred", "heroism", "hubris", "hunger", "hush", "hysteria", "hysterics",
+  "immortality", "influence", "isolation", "knowledge", "labor", "likelihood",
+  "liking", "loathing", "magnificence", "mastery", "misery", "notice",
+  "opulence", "pandemonium", "panic", "peace", "perplexity", "pilfering",
+  "pique", "plenty", "poverty", "power", "praise", "pride", "progress", "proof",
+  "prosperity", "puzzlement", "quiet", "radiance", "rancor", "recognition",
+  "regard", "reliance", "remorse", "renown", "repugnance", "respect",
+  "retribution", "reverence", "revulsion", "satisfaction", "savagery",
+  "scarcity", "scorn", "serenity", "shame", "skepticism", "snow", "solitude",
+  "spite", "splendor", "stardom", "starvation", "stress", "suffering",
+  "supremacy", "sway", "tedium", "thirst", "thrift", "toil", "tranquility",
+  "trust", "unease", "unrest", "valor", "veneration", "violence", "wealth",
+  "work",
 ]);
 
 const VOWELS = /[aeiou]+/g;
