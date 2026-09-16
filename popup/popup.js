@@ -4,7 +4,7 @@ import { fetchSynonyms } from "../src/datamuse.js";
 import { describeForm, matchCase } from "../src/forms.js";
 import { readSelectedWord } from "../src/selection.js";
 
-const EXAMPLES = ["hate", "walk", "anger", "problem", "good", "big"];
+const EXAMPLES = ["hate", "walk", "anger", "problem", "good", "big", "slowly"];
 const SYNONYM_DELAY_MS = 350;
 
 const $ = (id) => document.getElementById(id);
@@ -190,7 +190,7 @@ async function showSynonyms(word) {
   if (request.signal.aborted) return;
 
   if (!words.length) {
-    els.fallbackStatus.textContent = "No similar nouns, verbs or adjectives found. Check the spelling?";
+    els.fallbackStatus.textContent = "No similar nouns, verbs, adjectives or adverbs found. Check the spelling?";
     return;
   }
   const ranked = words.map((w) => ({ word: w, scaled: hasScale(w) }));

@@ -1,7 +1,7 @@
 # wordy
 
-A browser extension for finding **weaker and stronger** versions of nouns, verbs and
-adjectives.
+A browser extension for finding **weaker and stronger** versions of nouns, verbs,
+adjectives and adverbs.
 
 Select a word on the page (or type one) and open the popup: the word sits in the middle of a slider. Weaker
 words (*mind*, *dislike*) are on the left and stronger ones (*despise*, *detest*, *loathe*,
@@ -39,11 +39,12 @@ extension-shortcuts page) to open the popup.
 ## Adding words
 
 Each entry in `src/scales.js` is `[partOfSpeech, sense, "weakest, …, strongest"]`, where the
-part of speech is `noun`, `verb` or `adjective`:
+part of speech is `noun`, `verb`, `adjective` or `adverb`:
 
 ```js
 ["verb", "feel aversion", "mind, dislike, hate, despise, detest, loathe, abhor"],
 ["adjective", "big", "sizable, large, big, huge, enormous, gigantic, colossal"],
+["adverb", "quickly", "briskly, quickly, swiftly, rapidly, hastily, furiously"],
 ```
 
 Keep a scale to one meaning. A word can appear in several scales if it has several senses.
@@ -52,12 +53,13 @@ can be inflected and then recognized again.
 
 New irregular verbs (like *swim → swam, swum*) go in `IRREGULAR_VERBS` in `src/forms.js`.
 Nouns that sound wrong in the plural (like *unease*) go in `UNCOUNTABLE`. Adjectives
-with irregular comparatives (like *bad → worse, worst*) go in `IRREGULAR_ADJECTIVES`, and
-short ones that only take *more*/*most* (like *wrong*) go in `ONLY_MORE`.
+and adverbs with irregular comparatives (like *bad → worse, worst* or *badly → worse, worst*)
+go in `IRREGULAR_COMPARATIVES`, and short ones that only take *more*/*most* (like *wrong*)
+go in `ONLY_MORE`.
 
 ## Roadmap
 
-- **Grow the curated scales as far as they'll go.** Most nouns, verbs and adjectives
+- **Grow the curated scales as far as they'll go.** Most nouns, verbs, adjectives and adverbs
   that have a strength scale should get a hand-ranked one. Curated scales work offline,
   cost nothing and can be reviewed. Any word that falls through to the Datamuse fallback
   is a candidate for a new scale.

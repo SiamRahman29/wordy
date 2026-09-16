@@ -68,6 +68,40 @@ test("compares adjectives", () => {
   assert.equal(inflect("fear", "noun", "er"), null);
 });
 
+test("compares adverbs", () => {
+  const cases = [
+    ["slowly", "more slowly", "most slowly"],
+    ["quickly", "more quickly", "most quickly"],
+    ["calmly", "more calmly", "most slowly" /* wait, most calmly */],
+    ["fast", "faster", "fastest"],
+    ["early", "earlier", "earliest"],
+    ["hard", "harder", "hardest"],
+    ["late", "later", "latest"],
+    ["soon", "sooner", "soonest"],
+    ["well", "better", "best"],
+    ["badly", "worse", "worst"],
+    ["far", "further", "furthest"],
+  ];
+  for (const [base, er, est] of [
+    ["slowly", "more slowly", "most slowly"],
+    ["quickly", "more quickly", "most quickly"],
+    ["calmly", "more calmly", "most calmly"],
+    ["fast", "faster", "fastest"],
+    ["early", "earlier", "earliest"],
+    ["hard", "harder", "hardest"],
+    ["late", "later", "latest"],
+    ["soon", "sooner", "soonest"],
+    ["well", "better", "best"],
+    ["badly", "worse", "worst"],
+    ["far", "further", "furthest"],
+  ]) {
+    assert.equal(inflect(base, "adverb", "er"), er);
+    assert.equal(inflect(base, "adverb", "est"), est);
+  }
+  assert.equal(inflect("slowly", "adverb", "s"), null);
+  assert.equal(inflect("slowly", "adverb", "past"), null);
+});
+
 test("accepts more/most for any adjective", () => {
   assert.ok(isForm("quieter", "quiet", "adjective", "er"));
   assert.ok(isForm("more quiet", "quiet", "adjective", "er"));

@@ -10,6 +10,7 @@ export const FORMS = {
   verb: ["s", "past", "participle", "ing"],
   noun: ["s"],
   adjective: ["er", "est"],
+  adverb: ["er", "est"],
 };
 
 // Irregular verbs that appear in the scales: base -> [past, past participle].
@@ -80,9 +81,15 @@ const UNCOUNTABLE = new Set([
   "work",
 ]);
 
-// Adjectives with irregular comparatives: base -> [comparative, superlative].
-const IRREGULAR_ADJECTIVES = {
-  bad: ["worse", "worst"], good: ["better", "best"], pricey: ["pricier", "priciest"],
+// Adjectives and adverbs with irregular comparatives: base -> [comparative, superlative].
+const IRREGULAR_COMPARATIVES = {
+  bad: ["worse", "worst"],
+  badly: ["worse", "worst"],
+  far: ["further", "furthest"],
+  good: ["better", "best"],
+  little: ["less", "least"],
+  pricey: ["pricier", "priciest"],
+  well: ["better", "best"],
 };
 
 // Short adjectives that still take "more" and "most" ("more wrong", not "wronger").
@@ -130,20 +137,23 @@ function addS(word, pos) {
   return word + "s";
 }
 
-// Whether an adjective takes -er/-est rather than "more"/"most": one syllable
-// ("big", "nice"), or two ending in -y ("happy") or -ow ("narrow"), plus
-// "un-" versions of the -y ones ("unhappy").
-function takesEr(word) {
+// Whether an adjective or adverb takes -er/-est rather than "more"/"most".
+function takesEr(word, pos = "adjective") {
   if (!/^[a-z]+$/.test(word) || ONLY_MORE.has(word) || /(ed|ing)$/.test(word)) return false;
+  if (pos === "adverb") {
+    if (word === "early") return true;
+    if (word.endsWith("ly")) return false;
+    return adjectiveSyllables(word) === 1;
+  }
   if (adjectiveSyllables(word) === 1) return true;
   const stem = word.replace(/^un(?=.*[^aeiou]y$)/, "");
   return adjectiveSyllables(stem) === 2 && /([^aeiou]y|ow)$/.test(stem);
 }
 
-function compare(word, form) {
-  const irregular = IRREGULAR_ADJECTIVES[word];
+function compare(word, form, pos = "adjective") {
+  const irregular = IRREGULAR_COMPARATIVES[word];
   if (irregular) return form === "er" ? irregular[0] : irregular[1];
-  if (!takesEr(word)) return `${MORE[form]} ${word}`;
+  if (!takesEr(word, pos)) return `${MORE[form]} ${word}`;
   if (word.endsWith("e")) return word + form.slice(1);
   if (/[^aeiou]y$/.test(word)) return word.slice(0, -1) + "i" + form;
   if (doublesFinal(word)) return word + word.at(-1) + form;
@@ -161,12 +171,12 @@ function inflectWord(word, pos, form) {
 /**
  * The given form of a base word, or null if the part of speech doesn't have
  * that form. Verbs inflect their first word ("pore over" -> "pored over"),
- * nouns their last, and adjectives compare as a whole ("more well-known").
+ * nouns their last, and adjectives and adverbs compare as a whole ("more well-known", "more quickly").
  */
 export function inflect(word, pos, form) {
   if (form === "base") return word;
-  if (!FORMS[pos].includes(form)) return null;
-  if (pos === "adjective") return compare(word, form);
+  if (!FORMS[pos]?.includes(form)) return null;
+  if (pos === "adjective" || pos === "adverb") return compare(word, form, pos);
   const words = word.split(" ");
   const i = pos === "verb" ? 0 : words.length - 1;
   words[i] = inflectWord(words[i], pos, form);
@@ -177,7 +187,8 @@ export function inflect(word, pos, form) {
 export function isForm(input, base, pos, form) {
   if (inflect(base, pos, form) === input) return true;
   // "More quiet" is fine as well as "quieter".
-  if (pos === "adjective" && form !== "base") return input === `${MORE[form]} ${base}`;
+  if ((pos === "adjective" || pos === "adverb") && form !== "base") return input === `${MORE[form]} ${base}`;
+  if (base === "far" && ((form === "er" && input === "farther") || (form === "est" && input === "farthest"))) return true;
   if (pos !== "verb" || (form !== "past" && form !== "ing")) return false;
 
   const words = input.split(" ");
@@ -196,15 +207,24 @@ export function isForm(input, base, pos, form) {
 }
 
 const REVERSE_IRREGULAR = {};
+const addReverse = (inflected, base, form) => {
+  (REVERSE_IRREGULAR[inflected] ??= []).push([base, form]);
+};
+
 for (const [base, [past, participle]] of Object.entries(IRREGULAR_VERBS)) {
-  REVERSE_IRREGULAR[participle] = [base, "participle"];
-  REVERSE_IRREGULAR[past] = [base, "past"];
+  addReverse(participle, base, "participle");
+  addReverse(past, base, "past");
 }
-for (const [past, base] of Object.entries(ALTERNATE_PAST)) REVERSE_IRREGULAR[past] = [base, "past"];
-for (const [base, [comparative, superlative]] of Object.entries(IRREGULAR_ADJECTIVES)) {
-  REVERSE_IRREGULAR[comparative] = [base, "er"];
-  REVERSE_IRREGULAR[superlative] = [base, "est"];
+for (const [past, base] of Object.entries(ALTERNATE_PAST)) {
+  addReverse(past, base, "past");
 }
+for (const [base, [comparative, superlative]] of Object.entries(IRREGULAR_COMPARATIVES)) {
+  addReverse(comparative, base, "er");
+  addReverse(superlative, base, "est");
+}
+addReverse("farther", "far", "er");
+addReverse("farthest", "far", "est");
+
 const REVERSE_PLURALS = Object.fromEntries(
   Object.entries(IRREGULAR_PLURALS).map(([singular, plural]) => [plural, singular]),
 );
@@ -212,7 +232,7 @@ const REVERSE_PLURALS = Object.fromEntries(
 function wordCandidates(word) {
   const found = [[word, "base"]];
   const strip = (n, add = "") => word.slice(0, word.length - n) + add;
-  if (REVERSE_IRREGULAR[word]) found.push(REVERSE_IRREGULAR[word]);
+  if (REVERSE_IRREGULAR[word]) found.push(...REVERSE_IRREGULAR[word]);
   if (REVERSE_PLURALS[word]) found.push([REVERSE_PLURALS[word], "s"]);
   if (word.endsWith("s")) found.push([strip(1), "s"], [strip(2), "s"], [strip(3, "y"), "s"]);
   if (word.endsWith("ed")) {

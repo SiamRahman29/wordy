@@ -1,4 +1,4 @@
-// Intensity scales for nouns, verbs and adjectives.
+// Intensity scales for nouns, verbs, adjectives and adverbs.
 //
 // Each entry is [partOfSpeech, sense, words], where `words` runs from the
 // weakest word to the strongest. A word may appear in several scales when it
@@ -468,4 +468,79 @@ export const SCALES = [
   ["adjective", "rainy", "drizzly, showery, rainy, torrential"],
   ["adjective", "cloudy", "hazy, cloudy, overcast, gloomy"],
   ["adjective", "steep", "sloping, steep, sheer, vertical"],
+
+  // ── Adverbs: degree and intensity ────────────────────────────────────────
+  ["adverb", "to a high degree", "somewhat, noticeably, considerably, substantially, greatly, immensely, exceedingly"],
+  ["adverb", "to an extreme degree", "greatly, intensely, extremely, exceptionally, extraordinarily, astronomically"],
+  ["adverb", "to a minimal degree", "scarcely, hardly, barely, slightly, somewhat"],
+  ["adverb", "completely", "partly, largely, mostly, entirely, completely, totally, absolutely, utterly"],
+  ["adverb", "moderately", "slightly, mildly, moderately, reasonably, fairly"],
+  ["adverb", "excessively", "adequately, overly, excessively, immoderately, inordinately"],
+  ["adverb", "noticeably", "faintly, visibly, noticeably, distinctly, conspicuously, glaringly"],
+  ["adverb", "deeply", "mildly, moderately, deeply, profoundly, overwhelmingly"],
+  ["adverb", "intensely", "mildly, moderately, strongly, intensely, fiercely, violently"],
+  ["adverb", "partially", "slightly, partially, largely, fully"],
+
+  // ── Adverbs: speed, time and frequency ───────────────────────────────────
+  ["adverb", "quickly", "briskly, quickly, swiftly, rapidly, hastily, furiously"],
+  ["adverb", "slowly", "unhurriedly, leisurely, slowly, sluggishly, gradually, glacially"],
+  ["adverb", "instantly", "promptly, quickly, instantly, immediately, instantaneously"],
+  ["adverb", "soon", "presently, shortly, soon, imminently"],
+  ["adverb", "frequently", "seldom, occasionally, sometimes, often, frequently, regularly, constantly, always"],
+  ["adverb", "infrequently", "sometimes, occasionally, rarely, seldom, never"],
+  ["adverb", "continuously", "frequently, repeatedly, constantly, incessantly, perpetually, endlessly"],
+  ["adverb", "suddenly", "unexpectedly, abruptly, suddenly, startlingly"],
+  ["adverb", "gradually", "steadily, gradually, progressively, incrementally"],
+  ["adverb", "early", "punctually, early, ahead of time"],
+  ["adverb", "late", "belatedly, tardily, late"],
+  ["adverb", "habitually", "often, usually, regularly, habitually, invariably"],
+  ["adverb", "briefly", "fleetingly, briefly, temporarily, provisionally"],
+
+  // ── Adverbs: manner and emotion ──────────────────────────────────────────
+  ["adverb", "happily", "pleasantly, cheerfully, gladly, happily, joyfully, ecstatically, blissfully"],
+  ["adverb", "sadly", "glumly, sadly, mournfully, sorrowfully, despondently, inconsolably"],
+  ["adverb", "angrily", "crossly, irritably, angrily, furiously, wrathfully, murderously"],
+  ["adverb", "fearfully", "uneasily, nervously, anxiously, fearfully, terrifiedly, hysterically"],
+  ["adverb", "calmly", "mildly, quietly, calmly, serenely, placidly, imperturbably"],
+  ["adverb", "gently", "lightly, softly, gently, tenderly, delicately"],
+  ["adverb", "harshly", "firmly, sharply, sternly, harshly, severely, brutally, cruelly"],
+  ["adverb", "eagerly", "willingly, gladly, eagerly, avidly, passionately, frantically"],
+  ["adverb", "reluctantly", "hesitantly, begrudgingly, reluctantly, stubbornly, unwillingly"],
+  ["adverb", "boldly", "confidently, bravely, boldly, daringly, recklessly, audaciously"],
+  ["adverb", "timidly", "shyly, hesitantly, timidly, meekly, coweringly"],
+  ["adverb", "warmly", "politely, kindly, cordially, warmly, affectionately, lovingly"],
+  ["adverb", "coldly", "distantly, aloofly, coldly, frostily, icily"],
+  ["adverb", "carefully", "mindfully, carefully, cautiously, thoroughly, meticulously, painstakingly"],
+  ["adverb", "carelessly", "casually, hastily, carelessly, sloppily, recklessly, heedlessly"],
+  ["adverb", "proudly", "satisfyingly, proudly, smugly, conceitedly, arrogantly, haughtily"],
+  ["adverb", "rudely", "curtly, bluntly, impolitely, rudely, insolently, offensively"],
+  ["adverb", "bravely", "firmly, boldly, bravely, courageously, valiantly, heroically"],
+  ["adverb", "loudly", "audibly, aloud, loudly, noisily, deafeningly, thunderously"],
+  ["adverb", "quietly", "faintly, softly, quietly, hushedly, silently, inaudibly"],
+  ["adverb", "wildly", "freely, wildly, frantically, uncontrollably, maniacally"],
+  ["adverb", "painfully", "uncomfortably, sorely, painfully, agonizingly, excruciatingly"],
+  ["adverb", "sweetly", "pleasantly, nicely, sweetly, charmingly, delightfully"],
+
+  // ── Adverbs: certainty, truth and openness ────────────────────────────────
+  ["adverb", "certainly", "possibly, probably, likely, definitely, certainly, undeniably, absolutely"],
+  ["adverb", "doubtfully", "questioningly, skeptically, suspiciously, doubtfully, incredulously"],
+  ["adverb", "honestly", "frankly, honestly, candidly, truthfully, sincerely"],
+  ["adverb", "secretly", "discreetly, quietly, secretly, stealthily, furtively, surreptitiously"],
+  ["adverb", "openly", "publicly, openly, frankly, brazenly, unashamedly"],
+  ["adverb", "clearly", "apparently, clearly, obviously, plainly, glaringly, blatantly"],
+  ["adverb", "strictly", "firmly, strictly, rigidly, rigorously, uncompromisingly"],
+  ["adverb", "vaguely", "hazily, vaguely, unclearly, indistinctly, imperceptibly"],
+
+  // ── Adverbs: quality, ease and effort ────────────────────────────────────
+  ["adverb", "well", "adequately, acceptably, well, nicely, skillfully, superbly, brilliantly"],
+  ["adverb", "badly", "poorly, badly, terribly, horribly, dreadfully, appallingly, atrociously"],
+  ["adverb", "easily", "comfortably, easily, smoothly, effortlessly, seamlessly"],
+  ["adverb", "with difficulty", "awkwardly, stiffly, clumsily, painfully, arduously"],
+  ["adverb", "hard", "lightly, steadily, hard, intensely, fiercely, relentlessly"],
+  ["adverb", "generously", "freely, generously, lavishly, extravagantly, prodigally"],
+  ["adverb", "sparingly", "cautiously, thriftily, frugally, sparingly, stingily, miserly"],
+  ["adverb", "tightly", "snugly, firmly, tightly, rigidly, securely"],
+  ["adverb", "loosely", "slackly, loosely, freely"],
+  ["adverb", "brightly", "faintly, brightly, brilliantly, dazzlingly, radiantly"],
+  ["adverb", "beautifully", "pleasantly, nicely, beautifully, exquisitely, magnificently, gorgeously"],
 ];

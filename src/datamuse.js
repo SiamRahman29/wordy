@@ -3,7 +3,7 @@
 // intensity.
 
 const API = "https://api.datamuse.com/words";
-const WANTED_TAGS = new Set(["n", "v", "adj"]);
+const WANTED_TAGS = new Set(["n", "v", "adj", "adv"]);
 
 async function query(params, signal) {
   const url = `${API}?${new URLSearchParams({ ...params, md: "p", max: "40" })}`;

@@ -13,7 +13,7 @@ const wordsAround = (input, pos) => {
 
 test("every scale is well-formed", () => {
   for (const [pos, sense, words] of SCALES) {
-    assert.ok(["noun", "verb", "adjective"].includes(pos), `bad part of speech: ${pos}`);
+    assert.ok(["noun", "verb", "adjective", "adverb"].includes(pos), `bad part of speech: ${pos}`);
     assert.ok(sense, "missing sense");
     assert.equal(words, words.toLowerCase(), `not lowercase: ${sense}`);
   }
@@ -33,12 +33,17 @@ test("finds weaker and stronger words", () => {
   const { weaker, stronger } = wordsAround("hate");
   assert.ok(weaker.includes("dislike"));
   assert.ok(stronger.includes("detest"));
+
+  const { weaker: weakerAdv, stronger: strongerAdv } = wordsAround("slowly");
+  assert.ok(weakerAdv.includes("leisurely"));
+  assert.ok(strongerAdv.includes("sluggishly"));
 });
 
 test("is case- and whitespace-insensitive", () => {
   assert.equal(normalize("  Hate  "), "hate");
   assert.equal(lookup("  HATE ").matches[0].base, "hate");
   assert.equal(lookup("pore   over").matches[0].base, "pore over");
+  assert.equal(lookup("  SLOWLY  ").matches[0].base, "slowly");
 });
 
 test("returns every sense of a word", () => {
@@ -53,6 +58,8 @@ test("reduces inflected forms to a base form", () => {
     crises: "crisis", problems: "problem", lying: "lie", shouted: "shout",
     stared: "stare", "poring over": "pore over", fled: "flee", hidden: "hide",
     torn: "tear", preferred: "prefer", leapt: "leap", "get-togethers": "get-together",
+    "more slowly": "slowly", "most quickly": "quickly", faster: "fast",
+    earlier: "early", worse: "badly", better: "well",
   };
   for (const [input, base] of Object.entries(cases)) {
     assert.ok(lookup(input).matches.some((m) => m.base === base), input);
@@ -75,6 +82,10 @@ test("shows every word in the typed form", () => {
 
   const problems = lookup("problems").matches[0];
   assert.deepEqual(problems.forms, ["hiccups", "snags", "issues", "problems", "crises"]);
+
+  const moreSlowly = lookup("more slowly").matches.find((m) => m.sense === "slowly");
+  assert.equal(moreSlowly.form, "er");
+  assert.deepEqual(moreSlowly.forms.slice(0, 3), ["more unhurriedly", "more leisurely", "more slowly"]);
 });
 
 test("shows comparatives and superlatives in the same form", () => {
@@ -85,6 +96,7 @@ test("shows comparatives and superlatives in the same form", () => {
   assert.equal(lookup("best").matches[0].base, "good");
   assert.equal(lookup("most beautiful").matches[0].base, "beautiful");
   assert.equal(lookup("happiest").matches[0].forms.at(-1), "most ecstatic");
+  assert.ok(lookup("worse").matches.some((m) => m.base === "badly" && m.pos === "adverb"));
 });
 
 test("finds both a noun and the verb it comes from", () => {

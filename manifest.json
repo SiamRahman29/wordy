@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "wordy",
   "version": "0.1.0",
-  "description": "Find weaker and stronger versions of nouns, verbs and adjectives.",
+  "description": "Find weaker and stronger versions of nouns, verbs, adjectives and adverbs.",
   "permissions": [
     "activeTab",
     "scripting"
