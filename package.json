@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "icons": "sh scripts/build-icons.sh"
+    "icons": "sh scripts/build-icons.sh",
+    "package": "sh scripts/package.sh",
+    "store-images": "sh scripts/store-images.sh"
   }
 }

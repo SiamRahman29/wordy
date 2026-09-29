@@ -79,3 +79,13 @@ npm run icons     # re-render icons/*.png from icons/icon.svg (needs rsvg-conver
 ```
 
 Reload the extension from the extensions page after editing.
+
+## Publishing
+
+```sh
+npm run package       # dist/wordy-<version>.zip for the Chrome Web Store
+npm run store-images  # store/images/out/*.png (needs chromium, python3, rsvg-convert and ImageMagick)
+```
+
+`store/listing.md` has the store description, permission justifications and privacy answers
+to paste into the developer dashboard. The privacy policy is [PRIVACY.md](PRIVACY.md).
