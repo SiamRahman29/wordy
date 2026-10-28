@@ -312,6 +312,11 @@ export const SCALES = [
   ["noun", "dependence", "habit, reliance, dependence, addiction"],
   ["noun", "display of temper", "huff, outburst, tantrum, meltdown"],
   ["noun", "letdown", "anticlimax, letdown, disappointment, heartbreak"],
+  ["noun", "determination", "willingness, commitment, determination, tenacity"],
+  ["noun", "refusal", "hesitation, reluctance, refusal, rejection"],
+  ["noun", "opposition", "objection, opposition, resistance, defiance"],
+  ["noun", "obedience", "cooperation, compliance, obedience, submission"],
+  ["noun", "bias", "leaning, bias, prejudice, bigotry"],
 
   // ── Nouns: things that go wrong ──────────────────────────────────────────
   ["noun", "problem", "hiccup, snag, issue, problem, crisis"],
@@ -349,6 +354,11 @@ export const SCALES = [
   ["noun", "scandal", "controversy, scandal, outrage"],
   ["noun", "collision", "bump, scrape, collision, crash, pileup"],
   ["noun", "cut", "nick, scratch, cut, gash"],
+  ["noun", "fall", "slip, trip, stumble, fall, tumble"],
+  ["noun", "economic decline", "slowdown, downturn, recession, depression"],
+  ["noun", "betrayal", "disloyalty, deceit, betrayal, treachery"],
+  ["noun", "mistreatment", "neglect, mistreatment, abuse, torment, torture"],
+  ["noun", "oppression", "repression, oppression, persecution, tyranny"],
 
   // ── Nouns: people and conflict ───────────────────────────────────────────
   ["noun", "friend", "acquaintance, friend, companion, confidant, soulmate"],
@@ -377,6 +387,17 @@ export const SCALES = [
   ["noun", "fuss", "stir, fuss, commotion, furor"],
   ["noun", "applause", "clapping, applause, ovation, standing ovation"],
   ["noun", "honor", "credit, recognition, honor, glory"],
+  ["noun", "liar", "fibber, liar, cheat, fraud, con artist"],
+  ["noun", "rivalry", "competition, rivalry, feud, vendetta"],
+  ["noun", "revenge", "payback, retaliation, revenge, vengeance"],
+  ["noun", "outspokenness", "frankness, candor, directness, bluntness"],
+  ["noun", "mockery", "teasing, sarcasm, mockery, ridicule, derision"],
+  ["noun", "telling-off", "scolding, telling-off, dressing-down, tirade"],
+  ["noun", "meeting", "huddle, meeting, conference, convention"],
+  ["noun", "rule", "guideline, rule, law, commandment"],
+  ["noun", "permission", "nod, go-ahead, permission, authorization"],
+  ["noun", "ban", "limit, restriction, ban, prohibition"],
+  ["noun", "freedom", "leeway, flexibility, freedom, independence"],
 
   // ── Nouns: achievement and change ────────────────────────────────────────
   ["noun", "success", "progress, success, achievement, triumph"],
@@ -403,6 +424,11 @@ export const SCALES = [
   ["noun", "foolishness", "silliness, foolishness, stupidity, idiocy, lunacy"],
   ["noun", "piece of work", "errand, chore, task, project, undertaking"],
   ["noun", "fashion", "trend, fad, craze, mania"],
+  ["noun", "opportunity", "opening, chance, opportunity, golden opportunity"],
+  ["noun", "idea", "thought, idea, inspiration, epiphany"],
+  ["noun", "piece of news", "tidbit, update, revelation, bombshell"],
+  ["noun", "indulgence", "treat, indulgence, luxury, extravagance"],
+  ["noun", "business", "small business, company, corporation, conglomerate"],
 
   // ── Nouns: the physical world ────────────────────────────────────────────
   ["noun", "rain", "drizzle, shower, rain, downpour, deluge"],
@@ -447,6 +473,15 @@ export const SCALES = [
   ["noun", "piece of rock", "grain, pebble, stone, rock, boulder"],
   ["noun", "darkness", "dimness, gloom, darkness, blackness"],
   ["noun", "fog", "haze, mist, fog"],
+  ["noun", "frown", "pout, frown, scowl, glower"],
+  ["noun", "step", "shuffle, step, stride, leap"],
+  ["noun", "run", "jog, run, sprint, dash"],
+  ["noun", "break from work", "pause, breather, break, vacation, sabbatical"],
+  ["noun", "period of history", "phase, period, era, epoch"],
+  ["noun", "share of a whole", "sliver, fraction, portion, majority"],
+  ["noun", "valley", "dip, hollow, valley, gorge, canyon"],
+  ["noun", "book", "leaflet, booklet, book, tome"],
+  ["noun", "boat", "dinghy, boat, ship, ocean liner"],
 
   // ── Adjectives: feelings ─────────────────────────────────────────────────
   ["adjective", "happy", "content, pleased, happy, delighted, thrilled, ecstatic"],
