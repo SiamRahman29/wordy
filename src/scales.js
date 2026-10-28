@@ -522,6 +522,7 @@ export const SCALES = [
   ["adjective", "in love", "fond, smitten, infatuated, besotted, obsessed"],
   ["adjective", "ill", "under the weather, unwell, sick, gravely ill"],
   ["adjective", "full from eating", "satisfied, full, stuffed, bloated"],
+  ["adjective", "injured", "bruised, hurt, injured, wounded, maimed"],
 
   // ── Adjectives: people and behavior ──────────────────────────────────────
   ["adjective", "kind", "decent, kind, generous, selfless, saintly"],
@@ -568,6 +569,18 @@ export const SCALES = [
   ["adjective", "sarcastic", "dry, wry, sarcastic, biting, caustic"],
   ["adjective", "popular", "well-liked, popular, beloved, adored"],
   ["adjective", "unpopular", "unpopular, disliked, despised, reviled"],
+  ["adjective", "cowardly", "timid, fearful, cowardly, spineless"],
+  ["adjective", "ambitious", "motivated, ambitious, driven, ruthless"],
+  ["adjective", "solemn", "serious, solemn, somber, grim"],
+  ["adjective", "lenient", "flexible, lenient, permissive, lax"],
+  ["adjective", "obedient", "cooperative, compliant, obedient, submissive, servile"],
+  ["adjective", "rebellious", "disobedient, unruly, rebellious, defiant"],
+  ["adjective", "organized", "orderly, organized, methodical, regimented"],
+  ["adjective", "disorganized", "scattered, disorganized, haphazard, chaotic"],
+  ["adjective", "rowdy", "lively, boisterous, rowdy, raucous"],
+  ["adjective", "influential", "influential, powerful, dominant, all-powerful"],
+  ["adjective", "sincere", "genuine, sincere, heartfelt, wholehearted"],
+  ["adjective", "insincere", "insincere, phony, two-faced, hypocritical"],
 
   // ── Adjectives: quality and importance ───────────────────────────────────
   ["adjective", "good", "adequate, decent, good, great, excellent, superb, outstanding"],
@@ -644,6 +657,16 @@ export const SCALES = [
   ["adjective", "damaged", "scuffed, worn, damaged, wrecked, ruined"],
   ["adjective", "rotten", "stale, spoiled, rotten, putrid"],
   ["adjective", "sour", "tangy, tart, sour, acidic"],
+  ["adjective", "flawless", "polished, flawless, perfect, impeccable"],
+  ["adjective", "stressful", "demanding, stressful, nerve-racking, harrowing"],
+  ["adjective", "embarrassing", "awkward, embarrassing, humiliating, mortifying"],
+  ["adjective", "moving", "touching, moving, poignant, heart-rending"],
+  ["adjective", "inspiring", "encouraging, inspiring, uplifting, life-changing"],
+  ["adjective", "indecent", "cheeky, crude, vulgar, obscene"],
+  ["adjective", "secret", "private, confidential, secret, top-secret"],
+  ["adjective", "late", "delayed, late, overdue, long overdue"],
+  ["adjective", "constant", "regular, frequent, constant, incessant"],
+  ["adjective", "lasting", "long-lasting, enduring, permanent, eternal"],
 
   // ── Adjectives: size, amount and the physical world ──────────────────────
   ["adjective", "big", "sizable, large, big, huge, enormous, gigantic, colossal"],
@@ -692,6 +715,8 @@ export const SCALES = [
   ["adjective", "pale", "pale, pallid, ashen, ghostly"],
   ["adjective", "foggy", "hazy, misty, foggy"],
   ["adjective", "humid", "humid, muggy, sticky, sweltering"],
+  ["adjective", "remote", "secluded, remote, isolated, godforsaken"],
+  ["adjective", "polluted", "dirty, polluted, contaminated, toxic"],
 
   // ── Adverbs: degree and intensity ────────────────────────────────────────
   ["adverb", "to a high degree", "somewhat, noticeably, considerably, substantially, greatly, immensely, exceedingly"],
