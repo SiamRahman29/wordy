@@ -30,6 +30,8 @@ export const SCALES = [
   ["verb", "put up with", "accept, tolerate, bear, endure"],
   ["verb", "forgive", "excuse, forgive, pardon, absolve"],
   ["verb", "hold responsible", "suspect, blame, accuse, condemn"],
+  ["verb", "expect", "hope, anticipate, expect, count on"],
+  ["verb", "learn", "dabble in, pick up, learn, master"],
 
   // ── Verbs: affecting someone's feelings ──────────────────────────────────
   ["verb", "make angry", "bother, annoy, irritate, anger, infuriate, enrage"],
@@ -58,6 +60,9 @@ export const SCALES = [
   ["verb", "move emotionally", "touch, move, stir, overwhelm"],
   ["verb", "provoke", "needle, provoke, goad, incite"],
   ["verb", "hold the interest of", "interest, intrigue, fascinate, enthrall, mesmerize"],
+  ["verb", "manipulate", "influence, sway, manipulate, brainwash"],
+  ["verb", "betray", "let down, fail, betray, stab in the back"],
+  ["verb", "make quiet", "hush, quiet, silence, gag, muzzle"],
 
   // ── Verbs: speaking and reacting ─────────────────────────────────────────
   ["verb", "say aloud", "whisper, murmur, say, exclaim, shout, yell, scream"],
@@ -115,6 +120,13 @@ export const SCALES = [
   ["verb", "give up", "yield, give in, surrender, capitulate"],
   ["verb", "punish", "discipline, penalize, punish, crack down on"],
   ["verb", "shrink back", "wince, flinch, recoil, cower"],
+  ["verb", "speak ill of", "gossip about, badmouth, slander, defame"],
+  ["verb", "describe", "summarize, outline, describe, detail"],
+  ["verb", "talk at length", "elaborate, go on, ramble, drone on"],
+  ["verb", "teach", "show, teach, train, drill"],
+  ["verb", "falsify", "fudge, doctor, falsify, fabricate"],
+  ["verb", "celebrate", "mark, celebrate, party, revel"],
+  ["verb", "go red", "color, flush, blush, turn crimson"],
 
   // ── Verbs: moving and acting ─────────────────────────────────────────────
   ["verb", "go on foot", "amble, stroll, walk, stride, march"],
@@ -209,6 +221,27 @@ export const SCALES = [
   ["verb", "do better than", "match, exceed, surpass, eclipse, dwarf"],
   ["verb", "spend less", "cut back, economize, scrimp, pinch pennies"],
   ["verb", "cheat out of money", "overcharge, cheat, swindle, fleece"],
+  ["verb", "store up", "save, stash, hoard, stockpile"],
+  ["verb", "pay for", "chip in, contribute, fund, bankroll"],
+  ["verb", "make money", "earn, profit, rake in, make a killing"],
+  ["verb", "cancel", "postpone, shelve, cancel, scrap"],
+  ["verb", "leave a job", "step back, step down, quit, walk out"],
+  ["verb", "keep away from", "sidestep, avoid, dodge, evade"],
+  ["verb", "walk wearily", "shuffle, plod, trudge, slog"],
+  ["verb", "walk angrily", "march, stamp, stomp, storm"],
+  ["verb", "fall asleep", "drift off, nod off, fall asleep, pass out"],
+  ["verb", "lift", "raise, lift, hoist, heave"],
+  ["verb", "put down", "place, set down, put down, dump, slam down"],
+  ["verb", "dig", "scrape, scoop, dig, excavate"],
+  ["verb", "demolish", "dismantle, knock down, demolish, flatten, raze"],
+  ["verb", "move in on", "encroach, intrude, invade, overrun"],
+  ["verb", "beat up", "push around, rough up, beat up, batter"],
+  ["verb", "bleed", "ooze, bleed, gush, hemorrhage"],
+  ["verb", "beat (of a heart)", "beat, thump, pound, race"],
+  ["verb", "blow", "waft, blow, gust, howl, roar"],
+  ["verb", "be on fire", "smolder, burn, blaze, rage"],
+  ["verb", "ring", "tinkle, chime, ring, clang"],
+  ["verb", "wilt", "droop, wilt, wither, shrivel"],
 
   // ── Verbs: change and amount ─────────────────────────────────────────────
   ["verb", "make better", "tweak, refine, improve, enhance, transform, revolutionize"],
@@ -225,6 +258,8 @@ export const SCALES = [
   ["verb", "weaken", "soften, weaken, undermine, sap, cripple"],
   ["verb", "strengthen", "bolster, strengthen, reinforce, fortify"],
   ["verb", "get rid of", "reduce, remove, eliminate, eradicate"],
+  ["verb", "intensify", "deepen, heighten, intensify, escalate"],
+  ["verb", "slow down", "ease off, slow down, stall, grind to a halt"],
 
   // ── Nouns: feelings ──────────────────────────────────────────────────────
   ["noun", "aversion", "distaste, dislike, aversion, hatred, loathing, revulsion"],
