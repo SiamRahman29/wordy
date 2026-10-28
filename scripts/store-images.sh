@@ -52,7 +52,7 @@ shot 3-forms.png hated 2 0 \
 
 shot 4-dark.png big 2 0 \
   "Hand-picked scales. Works offline." \
-  "Over 800 curated scales of nouns, verbs, adjectives and adverbs, ranked by hand. Follows your light or dark theme." \
+  "Over 900 curated scales of nouns, verbs, adjectives and adverbs, ranked by hand. Follows your light or dark theme." \
   "Moving day|The new flat has a [big] window that looks straight onto the river.|We spent the first evening just watching the boats." \
   --blink-settings=preferredColorScheme=0
 

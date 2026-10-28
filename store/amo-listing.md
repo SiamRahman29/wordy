@@ -32,7 +32,7 @@ the package holds the same files as the repository.
 **Summary** (250 characters max)
 
 ```
-Find weaker and stronger versions of a word. Select a word, click wordy and slide between gentler and stronger alternatives for nouns, verbs, adjectives and adverbs. Works offline for over 800 hand-ranked scales.
+Find weaker and stronger versions of a word. Select a word, click wordy and slide between gentler and stronger alternatives for nouns, verbs, adjectives and adverbs. Works offline for over 900 hand-ranked scales.
 ```
 
 **Description**
@@ -46,7 +46,7 @@ dislike ← hate → despise, detest, loathe, abhor
 large ← big → huge, enormous, gigantic, colossal
 issue ← problem → crisis
 
-• Over 800 hand-ranked scales of nouns, verbs, adjectives and adverbs.
+• Over 900 hand-ranked scales of nouns, verbs, adjectives and adverbs.
 • Keeps the form you used: "hated" gives "detested", "problems" gives "crises", "Happier" gives "More thrilled".
 • Words with several meanings get a tab for each, like "fear" as a verb and as a noun.
 • Works offline for every word in its scales. For other words it shows similar words from the free Datamuse API.
