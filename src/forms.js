@@ -16,36 +16,41 @@ export const FORMS = {
 // Irregular verbs that appear in the scales: base -> [past, past participle].
 const IRREGULAR_VERBS = {
   bear: ["bore", "borne"], beat: ["beat", "beaten"], bite: ["bit", "bitten"],
-  break: ["broke", "broken"], cut: ["cut", "cut"], drink: ["drank", "drunk"],
-  eat: ["ate", "eaten"], fall: ["fell", "fallen"], fight: ["fought", "fought"],
-  flee: ["fled", "fled"], fling: ["flung", "flung"], forbid: ["forbade", "forbidden"],
-  forgive: ["forgave", "forgiven"], freeze: ["froze", "frozen"], grow: ["grew", "grown"],
+  blow: ["blew", "blown"], break: ["broke", "broken"],
+  broadcast: ["broadcast", "broadcast"], burst: ["burst", "burst"], cut: ["cut", "cut"],
+  drink: ["drank", "drunk"], eat: ["ate", "eaten"], fall: ["fell", "fallen"],
+  fight: ["fought", "fought"], flee: ["fled", "fled"], fling: ["flung", "flung"],
+  forbid: ["forbade", "forbidden"], forgive: ["forgave", "forgiven"],
+  freeze: ["froze", "frozen"], give: ["gave", "given"], grow: ["grew", "grown"],
   hide: ["hid", "hidden"], hit: ["hit", "hit"], hold: ["held", "held"],
   hurt: ["hurt", "hurt"], know: ["knew", "known"], leave: ["left", "left"],
-  mislead: ["misled", "misled"], misspend: ["misspent", "misspent"],
-  read: ["read", "read"], rebuild: ["rebuilt", "rebuilt"], rise: ["rose", "risen"],
-  run: ["ran", "run"], say: ["said", "said"], shake: ["shook", "shaken"],
-  shine: ["shone", "shone"], show: ["showed", "shown"], shrink: ["shrank", "shrunk"],
-  slay: ["slew", "slain"], sleep: ["slept", "slept"], spend: ["spent", "spent"],
-  spin: ["spun", "spun"], spit: ["spat", "spat"], steal: ["stole", "stolen"],
-  sting: ["stung", "stung"], stink: ["stank", "stunk"], stride: ["strode", "stridden"],
+  let: ["let", "let"], mislead: ["misled", "misled"], misspend: ["misspent", "misspent"],
+  overrun: ["overran", "overrun"], read: ["read", "read"],
+  rebuild: ["rebuilt", "rebuilt"], rise: ["rose", "risen"], run: ["ran", "run"],
+  say: ["said", "said"], shake: ["shook", "shaken"], shine: ["shone", "shone"],
+  show: ["showed", "shown"], shrink: ["shrank", "shrunk"], sing: ["sang", "sung"],
+  slay: ["slew", "slain"], sleep: ["slept", "slept"], speed: ["sped", "sped"],
+  spend: ["spent", "spent"], spin: ["spun", "spun"], spit: ["spat", "spat"],
+  spread: ["spread", "spread"], steal: ["stole", "stolen"], sting: ["stung", "stung"],
+  stink: ["stank", "stunk"], stride: ["strode", "stridden"],
   strike: ["struck", "struck"], strive: ["strove", "striven"], swear: ["swore", "sworn"],
   swell: ["swelled", "swollen"], take: ["took", "taken"], tear: ["tore", "torn"],
-  think: ["thought", "thought"], throw: ["threw", "thrown"], thrust: ["thrust", "thrust"],
-  understand: ["understood", "understood"], upset: ["upset", "upset"],
-  weep: ["wept", "wept"], wet: ["wet", "wet"], withdraw: ["withdrew", "withdrawn"],
+  think: ["thought", "thought"], throw: ["threw", "thrown"],
+  thrust: ["thrust", "thrust"], understand: ["understood", "understood"],
+  upset: ["upset", "upset"], weep: ["wept", "wept"], wet: ["wet", "wet"],
+  withdraw: ["withdrew", "withdrawn"],
 };
 
 // Accepted when reading input, but never produced.
 const ALTERNATE_PAST = {
-  burnt: "burn", leapt: "leap", smelt: "smell", strived: "strive", shined: "shine",
-  slayed: "slay", wetted: "wet",
+  broadcasted: "broadcast", burnt: "burn", leapt: "leap", smelt: "smell", speeded: "speed",
+  strived: "strive", shined: "shine", slayed: "slay", wetted: "wet",
 };
 
 // Multi-syllable verbs whose final consonant doubles ("abhorred").
 const DOUBLE_FINAL = new Set([
-  "abhor", "admit", "control", "excel", "extol", "forbid", "prefer", "regret", "repel",
-  "upset", "worship",
+  "abhor", "admit", "control", "excel", "extol", "forbid", "overrun", "permit", "prefer",
+  "rebel", "regret", "repel", "submit", "upset", "worship",
 ]);
 
 // Irregular noun plurals.
@@ -54,31 +59,35 @@ const IRREGULAR_PLURALS = { crisis: "crises", nemesis: "nemeses" };
 // Nouns that read badly in the plural ("uneases"); they stay singular.
 const UNCOUNTABLE = new Set([
   "abundance", "acclaim", "admiration", "adoration", "adulation", "affluence",
-  "amazement", "anger", "anguish", "arrogance", "astonishment", "attention",
-  "awareness", "awe", "bewilderment", "bliss", "bloodshed", "boredom",
-  "bravery", "brilliance", "brutality", "burnout", "calm", "carnage", "chaos",
-  "clout", "clutter", "cold", "competence", "confusion", "contempt",
-  "contentment", "courage", "cruelty", "curiosity", "damage", "dearth",
-  "dehydration", "desolation", "despair", "destitution", "destruction",
-  "devastation", "devotion", "dirt", "disarray", "disbelief", "disdain",
-  "disgrace", "disgust", "disregard", "distaste", "distress", "distrust",
-  "dominance", "dread", "drizzle", "drudgery", "elation", "enjoyment",
-  "euphoria", "evidence", "exasperation", "excitement", "exhaustion",
-  "exhilaration", "expertise", "faith", "fame", "familiarity", "fascination",
-  "fatigue", "feedback", "filth", "fury", "grief", "grime", "growth", "guilt",
-  "hatred", "heroism", "hubris", "hunger", "hush", "hysteria", "hysterics",
-  "immortality", "influence", "isolation", "knowledge", "labor", "likelihood",
-  "liking", "loathing", "magnificence", "mastery", "misery", "notice",
-  "opulence", "pandemonium", "panic", "peace", "perplexity", "pilfering",
-  "pique", "plenty", "poverty", "power", "praise", "pride", "progress", "proof",
-  "prosperity", "puzzlement", "quiet", "radiance", "rancor", "recognition",
-  "regard", "reliance", "remorse", "renown", "repugnance", "respect",
-  "retribution", "reverence", "revulsion", "satisfaction", "savagery",
-  "scarcity", "scorn", "serenity", "shame", "skepticism", "snow", "solitude",
-  "spite", "splendor", "stardom", "starvation", "stress", "suffering",
-  "supremacy", "sway", "tedium", "thirst", "thrift", "toil", "tranquility",
-  "trust", "unease", "unrest", "valor", "veneration", "violence", "wealth",
-  "work",
+  "amazement", "anger", "anguish", "animosity", "applause", "arrogance",
+  "astonishment", "attention", "awareness", "awe", "bewilderment", "bliss",
+  "bloodshed", "boredom", "bother", "bravery", "brilliance", "brutality",
+  "burnout", "calm", "carnage", "chaos", "clapping", "clout", "clutter",
+  "cold", "compassion", "competence", "confidence", "confusion", "contempt",
+  "contentment", "courage", "credit", "cruelty", "curiosity", "damage",
+  "dearth", "decency", "dehydration", "dependence", "desolation", "despair",
+  "destitution", "destruction", "devastation", "devotion", "dirt", "disarray",
+  "disbelief", "disdain", "disgrace", "disgust", "disregard", "distaste",
+  "distress", "distrust", "dominance", "dread", "drizzle", "drudgery",
+  "elation", "enjoyment", "envy", "euphoria", "evidence", "exasperation",
+  "excitement", "exhaustion", "exhilaration", "expertise", "faith", "fame",
+  "familiarity", "fanaticism", "fascination", "fatigue", "feedback", "filth",
+  "friction", "fury", "generosity", "gloom", "glory", "grief", "grime",
+  "growth", "guilt", "haste", "hatred", "headway", "heartbreak", "heroism",
+  "hostility", "hubris", "hunger", "hurry", "hush", "hysteria", "hysterics",
+  "idiocy", "immortality", "influence", "intelligence", "isolation",
+  "jealousy", "knowledge", "labor", "likelihood", "liking", "loathing",
+  "lunacy", "magnificence", "mastery", "might", "mischief", "misery", "notice",
+  "optimism", "opulence", "pandemonium", "panic", "peace", "perplexity",
+  "pilfering", "pique", "plenty", "poverty", "power", "praise", "pride",
+  "progress", "proof", "prosperity", "puzzlement", "quiet", "radiance",
+  "rancor", "recognition", "regard", "reliance", "remorse", "renown",
+  "repugnance", "respect", "retribution", "reverence", "revulsion",
+  "satisfaction", "savagery", "scarcity", "scorn", "serenity", "shambles",
+  "shame", "skepticism", "snow", "solitude", "spite", "splendor", "stardom",
+  "starvation", "stress", "stupidity", "suffering", "supremacy", "sway",
+  "tedium", "thirst", "thrift", "toil", "tranquility", "trust", "unease",
+  "unrest", "valor", "veneration", "violence", "wealth", "work",
 ]);
 
 // Adjectives and adverbs with irregular comparatives: base -> [comparative, superlative].
@@ -93,7 +102,9 @@ const IRREGULAR_COMPARATIVES = {
 };
 
 // Short adjectives that still take "more" and "most" ("more wrong", not "wronger").
-const ONLY_MORE = new Set(["cross", "down", "fun", "known", "real", "spent", "wrong"]);
+const ONLY_MORE = new Set([
+  "cross", "down", "fun", "known", "naive", "real", "spent", "viable", "worn", "wrong",
+]);
 const MORE = { er: "more", est: "most" };
 
 const VOWELS = /[aeiou]+/g;
