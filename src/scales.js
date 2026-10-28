@@ -330,6 +330,12 @@ export const SCALES = [
   ["noun", "opposition", "objection, opposition, resistance, defiance"],
   ["noun", "obedience", "cooperation, compliance, obedience, submission"],
   ["noun", "bias", "leaning, bias, prejudice, bigotry"],
+  ["noun", "suspicion", "wariness, suspicion, mistrust, paranoia"],
+  ["noun", "ambition", "motivation, ambition, drive, ruthlessness"],
+  ["noun", "stubbornness", "firmness, stubbornness, obstinacy, pigheadedness"],
+  ["noun", "care", "care, thoroughness, meticulousness, perfectionism"],
+  ["noun", "carelessness", "inattention, carelessness, negligence, recklessness"],
+  ["noun", "laziness", "inactivity, idleness, laziness, sloth"],
 
   // ── Nouns: things that go wrong ──────────────────────────────────────────
   ["noun", "problem", "hiccup, snag, issue, problem, crisis"],
@@ -372,6 +378,9 @@ export const SCALES = [
   ["noun", "betrayal", "disloyalty, deceit, betrayal, treachery"],
   ["noun", "mistreatment", "neglect, mistreatment, abuse, torment, torture"],
   ["noun", "oppression", "repression, oppression, persecution, tyranny"],
+  ["noun", "rift", "crack, rift, split, rupture"],
+  ["noun", "overpricing", "markup, overcharge, rip-off, extortion"],
+  ["noun", "traffic", "traffic, congestion, traffic jam, gridlock"],
 
   // ── Nouns: people and conflict ───────────────────────────────────────────
   ["noun", "friend", "acquaintance, friend, companion, confidant, soulmate"],
@@ -411,6 +420,9 @@ export const SCALES = [
   ["noun", "permission", "nod, go-ahead, permission, authorization"],
   ["noun", "ban", "limit, restriction, ban, prohibition"],
   ["noun", "freedom", "leeway, flexibility, freedom, independence"],
+  ["noun", "politeness", "civility, politeness, courtesy, graciousness"],
+  ["noun", "rudeness", "cheek, impertinence, rudeness, insolence"],
+  ["noun", "publicity", "mention, coverage, publicity, hype"],
 
   // ── Nouns: achievement and change ────────────────────────────────────────
   ["noun", "success", "progress, success, achievement, triumph"],
@@ -442,6 +454,11 @@ export const SCALES = [
   ["noun", "piece of news", "tidbit, update, revelation, bombshell"],
   ["noun", "indulgence", "treat, indulgence, luxury, extravagance"],
   ["noun", "business", "small business, company, corporation, conglomerate"],
+  ["noun", "style", "taste, style, elegance, glamour"],
+  ["noun", "creativity", "imagination, creativity, inventiveness, ingenuity"],
+  ["noun", "bargain", "discount, deal, bargain, steal"],
+  ["noun", "workload", "load, workload, burden, overload"],
+  ["noun", "remedy", "relief, remedy, cure, miracle cure"],
 
   // ── Nouns: the physical world ────────────────────────────────────────────
   ["noun", "rain", "drizzle, shower, rain, downpour, deluge"],
