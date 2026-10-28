@@ -22,7 +22,7 @@ Select a word on any page and click the wordy icon. Your word sits in the middle
   large ← big → huge, enormous, gigantic, colossal
   issue ← problem → crisis
 
-• Over 700 hand-ranked scales of nouns, verbs, adjectives and adverbs.
+• Over 800 hand-ranked scales of nouns, verbs, adjectives and adverbs.
 • Keeps the form you used: "hated" gives "detested", "problems" gives "crises", "Happier" gives "More thrilled".
 • Words with several meanings get a tab for each, like "fear" as a verb and as a noun.
 • Works offline for every word in its scales. For other words it shows similar words from the free Datamuse API.
