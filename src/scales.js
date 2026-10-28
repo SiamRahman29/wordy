@@ -267,6 +267,16 @@ export const SCALES = [
   ["noun", "attention", "notice, attention, focus, fixation, obsession"],
   ["noun", "knowledge", "awareness, familiarity, knowledge, expertise, mastery"],
   ["noun", "need", "preference, desire, need, necessity"],
+  ["noun", "envy", "envy, jealousy, resentment, bitterness"],
+  ["noun", "compassion", "concern, sympathy, compassion"],
+  ["noun", "kindness", "decency, kindness, generosity, selflessness"],
+  ["noun", "hostility", "friction, tension, hostility, animosity"],
+  ["noun", "hope", "hope, optimism, confidence"],
+  ["noun", "loyalty", "faithfulness, loyalty, devotion, fanaticism"],
+  ["noun", "wickedness", "mischief, naughtiness, wickedness, evil"],
+  ["noun", "dependence", "habit, reliance, dependence, addiction"],
+  ["noun", "display of temper", "huff, outburst, tantrum, meltdown"],
+  ["noun", "letdown", "anticlimax, letdown, disappointment, heartbreak"],
 
   // ── Nouns: things that go wrong ──────────────────────────────────────────
   ["noun", "problem", "hiccup, snag, issue, problem, crisis"],
@@ -298,6 +308,12 @@ export const SCALES = [
   ["noun", "punishment", "warning, reprimand, penalty, punishment, retribution"],
   ["noun", "complaint", "quibble, gripe, complaint, protest, outcry"],
   ["noun", "warning", "reminder, caution, warning, alarm"],
+  ["noun", "nuisance", "bother, nuisance, hassle, headache, nightmare"],
+  ["noun", "botched situation", "muddle, mess, shambles, debacle"],
+  ["noun", "disadvantage", "drawback, disadvantage, handicap"],
+  ["noun", "scandal", "controversy, scandal, outrage"],
+  ["noun", "collision", "bump, scrape, collision, crash, pileup"],
+  ["noun", "cut", "nick, scratch, cut, gash"],
 
   // ── Nouns: people and conflict ───────────────────────────────────────────
   ["noun", "friend", "acquaintance, friend, companion, confidant, soulmate"],
@@ -322,6 +338,10 @@ export const SCALES = [
   ["noun", "promise", "assurance, promise, pledge, vow, oath"],
   ["noun", "order", "instruction, direction, order, command, decree"],
   ["noun", "evidence", "hint, clue, indication, evidence, proof"],
+  ["noun", "talk between people", "chat, conversation, discussion, debate"],
+  ["noun", "fuss", "stir, fuss, commotion, furor"],
+  ["noun", "applause", "clapping, applause, ovation, standing ovation"],
+  ["noun", "honor", "credit, recognition, honor, glory"],
 
   // ── Nouns: achievement and change ────────────────────────────────────────
   ["noun", "success", "progress, success, achievement, triumph"],
@@ -339,6 +359,15 @@ export const SCALES = [
   ["noun", "large amount", "plenty, abundance, surplus, glut, flood"],
   ["noun", "gain", "gain, profit, windfall, bonanza, jackpot"],
   ["noun", "beauty", "charm, beauty, splendor, magnificence"],
+  ["noun", "hit", "success, hit, smash hit, sensation"],
+  ["noun", "progress", "headway, progress, advance, breakthrough"],
+  ["noun", "advantage", "edge, advantage, upper hand"],
+  ["noun", "benefit", "perk, benefit, boon, godsend"],
+  ["noun", "strength", "sturdiness, strength, power, might"],
+  ["noun", "intelligence", "wit, intelligence, brilliance, genius"],
+  ["noun", "foolishness", "silliness, foolishness, stupidity, idiocy, lunacy"],
+  ["noun", "piece of work", "errand, chore, task, project, undertaking"],
+  ["noun", "fashion", "trend, fad, craze, mania"],
 
   // ── Nouns: the physical world ────────────────────────────────────────────
   ["noun", "rain", "drizzle, shower, rain, downpour, deluge"],
@@ -371,6 +400,18 @@ export const SCALES = [
   ["noun", "walk", "stroll, walk, hike, trek"],
   ["noun", "look", "glimpse, glance, look, gaze, stare, glare"],
   ["noun", "cry", "whimper, cry, wail, scream, shriek"],
+  ["noun", "shout", "call, shout, yell, roar, bellow"],
+  ["noun", "push", "nudge, prod, push, shove"],
+  ["noun", "pull", "tug, pull, yank, wrench"],
+  ["noun", "hurry", "haste, hurry, rush, scramble"],
+  ["noun", "sleep", "catnap, nap, sleep, slumber"],
+  ["noun", "mouthful of drink", "sip, swallow, gulp, swig"],
+  ["noun", "small amount", "handful, bit, dash, smidgen, trace"],
+  ["noun", "length of time", "instant, moment, minute, age, eternity"],
+  ["noun", "road", "path, lane, road, highway"],
+  ["noun", "piece of rock", "grain, pebble, stone, rock, boulder"],
+  ["noun", "darkness", "dimness, gloom, darkness, blackness"],
+  ["noun", "fog", "haze, mist, fog"],
 
   // ── Adjectives: feelings ─────────────────────────────────────────────────
   ["adjective", "happy", "content, pleased, happy, delighted, thrilled, ecstatic"],
