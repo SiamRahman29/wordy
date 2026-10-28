@@ -32,6 +32,7 @@ export const SCALES = [
   ["verb", "hold responsible", "suspect, blame, accuse, condemn"],
   ["verb", "expect", "hope, anticipate, expect, count on"],
   ["verb", "learn", "dabble in, pick up, learn, master"],
+  ["verb", "sulk", "mope, sulk, brood, wallow"],
 
   // ── Verbs: affecting someone's feelings ──────────────────────────────────
   ["verb", "make angry", "bother, annoy, irritate, anger, infuriate, enrage"],
@@ -127,6 +128,9 @@ export const SCALES = [
   ["verb", "falsify", "fudge, doctor, falsify, fabricate"],
   ["verb", "celebrate", "mark, celebrate, party, revel"],
   ["verb", "go red", "color, flush, blush, turn crimson"],
+  ["verb", "promote", "promote, publicize, hype, oversell"],
+  ["verb", "research", "look up, look into, research, investigate"],
+  ["verb", "copy", "echo, imitate, copy, plagiarize"],
 
   // ── Verbs: moving and acting ─────────────────────────────────────────────
   ["verb", "go on foot", "amble, stroll, walk, stride, march"],
@@ -242,6 +246,15 @@ export const SCALES = [
   ["verb", "be on fire", "smolder, burn, blaze, rage"],
   ["verb", "ring", "tinkle, chime, ring, clang"],
   ["verb", "wilt", "droop, wilt, wither, shrivel"],
+  ["verb", "squirm", "fidget, wriggle, squirm, writhe"],
+  ["verb", "spray", "mist, sprinkle, spray, douse"],
+  ["verb", "tidy up", "straighten, tidy, clean up, spring-clean"],
+  ["verb", "gather", "collect, gather, accumulate, amass"],
+  ["verb", "join together", "connect, join, merge, fuse"],
+  ["verb", "split apart", "divide, split, splinter, fragment"],
+  ["verb", "wear away", "scuff, wear down, erode, eat away at"],
+  ["verb", "arrest", "stop, detain, arrest, imprison"],
+  ["verb", "set free", "let go, release, free, liberate"],
 
   // ── Verbs: change and amount ─────────────────────────────────────────────
   ["verb", "make better", "tweak, refine, improve, enhance, transform, revolutionize"],
