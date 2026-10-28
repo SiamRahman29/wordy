@@ -733,6 +733,8 @@ export const SCALES = [
   ["adverb", "thoroughly", "superficially, adequately, thoroughly, exhaustively"],
   ["adverb", "exactly", "roughly, approximately, closely, accurately, precisely, exactly"],
   ["adverb", "widely", "commonly, widely, universally"],
+  ["adverb", "heavily", "sparingly, moderately, heavily, excessively"],
+  ["adverb", "abundantly", "sufficiently, amply, plentifully, abundantly"],
 
   // ── Adverbs: speed, time and frequency ───────────────────────────────────
   ["adverb", "quickly", "briskly, quickly, swiftly, rapidly, hastily, furiously"],
@@ -795,6 +797,17 @@ export const SCALES = [
   ["adverb", "stubbornly", "firmly, stubbornly, obstinately, defiantly"],
   ["adverb", "curiously", "curiously, inquisitively, nosily"],
   ["adverb", "intently", "attentively, closely, intently, raptly"],
+  ["adverb", "kindly", "considerately, kindly, generously, selflessly"],
+  ["adverb", "apologetically", "apologetically, regretfully, remorsefully, contritely"],
+  ["adverb", "energetically", "briskly, energetically, vigorously, tirelessly"],
+  ["adverb", "lazily", "idly, lazily, listlessly, sluggishly"],
+  ["adverb", "determinedly", "steadily, determinedly, resolutely, doggedly, relentlessly"],
+  ["adverb", "obsessively", "keenly, intently, obsessively, compulsively"],
+  ["adverb", "solemnly", "earnestly, solemnly, somberly, grimly"],
+  ["adverb", "sneakily", "slyly, sneakily, cunningly, deviously"],
+  ["adverb", "threateningly", "warningly, ominously, threateningly, menacingly"],
+  ["adverb", "tactlessly", "bluntly, tactlessly, insensitively, callously"],
+  ["adverb", "dismissively", "offhandedly, dismissively, condescendingly, contemptuously"],
 
   // ── Adverbs: certainty, truth and openness ────────────────────────────────
   ["adverb", "certainly", "possibly, probably, likely, definitely, certainly, undeniably, absolutely"],
@@ -814,6 +827,10 @@ export const SCALES = [
   ["adverb", "surprisingly", "unexpectedly, surprisingly, amazingly, astonishingly, incredibly"],
   ["adverb", "strangely", "unusually, oddly, strangely, weirdly, bizarrely"],
   ["adverb", "shockingly", "surprisingly, startlingly, shockingly, appallingly, horrifyingly"],
+  ["adverb", "convincingly", "plausibly, credibly, convincingly, compellingly, irrefutably"],
+  ["adverb", "confusingly", "unclearly, confusingly, bafflingly, incomprehensibly"],
+  ["adverb", "absurdly", "ridiculously, absurdly, preposterously, ludicrously"],
+  ["adverb", "unfairly", "unevenly, unfairly, unjustly, scandalously"],
 
   // ── Adverbs: quality, ease and effort ────────────────────────────────────
   ["adverb", "well", "adequately, acceptably, well, nicely, skillfully, superbly, brilliantly"],
@@ -841,4 +858,9 @@ export const SCALES = [
   ["adverb", "frighteningly", "unnervingly, alarmingly, frighteningly, terrifyingly"],
   ["adverb", "disgustingly", "unpleasantly, distastefully, disgustingly, revoltingly, repulsively"],
   ["adverb", "annoyingly", "annoyingly, irritatingly, infuriatingly, maddeningly"],
+  ["adverb", "fluently", "haltingly, passably, fluently, flawlessly"],
+  ["adverb", "disappointingly", "underwhelmingly, disappointingly, dismally, abysmally"],
+  ["adverb", "embarrassingly", "awkwardly, embarrassingly, humiliatingly, mortifyingly"],
+  ["adverb", "movingly", "touchingly, movingly, poignantly, heartbreakingly"],
+  ["adverb", "colorfully", "colorfully, vividly, vibrantly, garishly"],
 ];
